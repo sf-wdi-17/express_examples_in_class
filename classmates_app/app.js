@@ -13,15 +13,17 @@ app.set("view engine", "ejs");
 // Set a root route
 
 app.get('/', function(req, res) {
-	var cmates = [
-	{ name: "John", age: "21" },
-	{ name: "Brett", age: "14"},
-	{ name: "Christina", age: "24"},
-	{ name: "Rick", age: "27"}
+	var classmates = [
+		{ name: "John", age: "21" },
+		{ name: "Brett", age: "14"},
+		{ name: "Christina", age: "24"},
+		{ name: "Rick", age: "27"}
 	];
 
-	res.render("index", { taco: cmates } );
+	res.render("index", { taco: classmates } );
 });
 
 
-app.listen(3000);
+app.listen(3000, function() {
+	console.log('Server listening on port 3000');
+});
