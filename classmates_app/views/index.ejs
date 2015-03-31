@@ -10,5 +10,12 @@
 			<li>Name: <%= classmates[i].name %>, Age: <%= classmates[i].age %></li>
 		<% } %>
 	</ul>
+
+	<h2>Add a new student</h2>
+	<form action="/add" method="POST">
+		<input type="text" name="name" placeholder="Name">
+		<input type="text" name="age" placeholder="Age">
+		<input type="submit">
+	</form>
 </body>
 </html>
