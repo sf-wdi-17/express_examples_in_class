@@ -1,12 +1,3 @@
-<% 
-var cmates = [
-	{ name: "John", age: "21" },
-	{ name: "Brett", age: "14"},
-	{ name: "Christina", age: "24"},
-	{ name: "Rick", age: "27"}
-	];
-
-%>
 <!doctype html>
 <html>
 <head>
@@ -15,12 +6,17 @@ var cmates = [
 <body>
 	<h1>Here are all of your classmates:</h1>
 	<ul>
-		<% for (var i = 0; i < cmates.length; i++) {	%>
-		<li>Name: <%= cmates[i].name %>, Age: <%= cmates[i].age  %></li>
-
-		<%	}  %>
+		<% for (var i = 0; i < classmates.length; i++) { %>
+			<li>
+				<a href="/classmates/<%= i + 1 %>">Name: <%= classmates[i].name %>, Age: <%= classmates[i].age %></a>
+				<form action="/classmates/<%= i + 1 %>?_method=DELETE" method="POST">
+					<input type="submit" value="Destroy">
+				</form>
+			</li>
+		<% } %>
 	</ul>
-	<p>The number was: </p>
+
+	<a href="/classmates/new">Add a new classmate</a>
 
 </body>
 </html>
