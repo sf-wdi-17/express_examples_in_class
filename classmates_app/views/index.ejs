@@ -7,15 +7,16 @@
 	<h1>Here are all of your classmates:</h1>
 	<ul>
 		<% for (var i = 0; i < classmates.length; i++) { %>
-			<li>Name: <%= classmates[i].name %>, Age: <%= classmates[i].age %></li>
+			<li>
+				<a href="/classmates/<%= i + 1 %>">Name: <%= classmates[i].name %>, Age: <%= classmates[i].age %></a>
+				<form action="/classmates/<%= i + 1 %>?_method=DELETE" method="POST">
+					<input type="submit" value="Destroy">
+				</form>
+			</li>
 		<% } %>
 	</ul>
 
-	<h2>Add a new student</h2>
-	<form action="/add" method="POST">
-		<input type="text" name="name" placeholder="Name">
-		<input type="text" name="age" placeholder="Age">
-		<input type="submit">
-	</form>
+	<a href="/classmates/new">Add a new classmate</a>
+
 </body>
 </html>
