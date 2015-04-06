@@ -31,8 +31,8 @@ selectedexpression=${a[$RANDOM % ${#a[@]} ]}
 # Add selected expression to string
 randomstring="${selectedexpression}-"
 
-# Wait an half hour
-sleep 1 # It's one second for debugging, dear SOers
+# # Wait an half hour
+# sleep 1 # It's one second for debugging, dear SOers
 
 # Now add one more word
 
